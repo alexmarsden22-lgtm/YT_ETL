@@ -20,4 +20,4 @@ def get_playlist_id():
         raise e
 
 if __name__ == "__main__":
-    print(get_playlist_id())
+    get_playlist_id()
