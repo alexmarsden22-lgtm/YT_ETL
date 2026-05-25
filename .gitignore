@@ -3,3 +3,11 @@ _pycache_/
 .env
 logs/
 data
+requirements.txt
+docker/
+include/
+plugins/
+YT_ETL/
+airflow.cfg
+dags/__pycache__/
+dags/api/__pycache__/
