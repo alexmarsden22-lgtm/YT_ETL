@@ -2,17 +2,26 @@ from airflow import DAG
 import pendulum
 from datetime import datetime, timedelta
 from api.video_stats import get_playlist_id, get_video_ids, get_video_statistics, save_to_json
+#from airflow.providers.smtp.notifications.smtp import SmtpNotifier
 
 # Define the local timezone
 local_tz = pendulum.timezone("Europe/London")
+
+
+
 
 # Default Args
 default_args = {
     "owner": "dataengineers",
     "depends_on_past": False,
-    #"email_on_failure": False,
-    #"email_on_retry": False,
-    #"email": "alexmarsden22@gmail.com",
+#    on_failure_callback=SmtpNotifier(
+#        from_email="myemail@myemail.com",
+#        to="myemail@myemail.com",
+#        subject="Task {{ ti.task_id }} failed",
+#        ),
+#    "email_on_failure": False,
+#    "email_on_retry": False,
+#    "email": "alexmarsden22@gmail.com",
     # 'retries': 1,
     # 'retry_delay': timedelta(minutes=5),
     "max_active_runs": 1,
